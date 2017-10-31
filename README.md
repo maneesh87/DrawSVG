@@ -13,7 +13,6 @@ SVGDrawingView can be directly added as a view to storyboard or added as subview
 drawingView.strokeColor = [UIColor darkGrayColor];
 
 // Set Width:
-```objective-c
 drawingView.strokeWidth = 10.0;
 ```
 
