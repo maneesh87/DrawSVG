@@ -7,44 +7,42 @@
 //
 
 #import "ViewController.h"
-#import "DrawingView.h"
+#import "SVGDrawingView.h"
 
-@interface ViewController ()
-{
-    IBOutlet DrawingView *drawingView;
+@interface ViewController () {
+    IBOutlet SVGDrawingView *drawingView;
 }
--(IBAction)reset:(id)sender;
--(IBAction)save:(id)sender;
+
+- (IBAction)reset:(id)sender;
+- (IBAction)save:(id)sender;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
     
-    [drawingView initializeView];
-    drawingView.sizeOfline=10.0;
+    [super viewDidLoad];
+    
+    drawingView.strokeColor = [UIColor darkGrayColor];
+    drawingView.strokeWidth = 10.0;
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(IBAction)reset:(id)sender
-{
+- (IBAction)reset:(id)sender {
+    
     [drawingView clearView];
+    
 }
 
--(IBAction)save:(id)sender
-{
+- (IBAction)save:(id)sender {
+    
     // Saves SVG file to document Directory
     
-    [drawingView createSVGFile];
+    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent: @"Documents/Sign.svg"];
+    NSError *e;
+    [drawingView saveSVGFileToPath:path error:&e];
+    
 }
 
 @end
