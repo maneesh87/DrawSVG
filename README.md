@@ -4,7 +4,7 @@ DrawSVG
 Custom UIImageview which supports drawing and creation of SVG image files. Ideal for creating and storing signatures in SVG format.
 
 ## Getting Started
-
+Download and Drop SVGDrawingView.h and SVGDrawingView.m in your project.
 SVGDrawingView can be directly added as a view to storyboard or added as subview.
 
 ### Setup
